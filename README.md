@@ -1,7 +1,7 @@
 # hexo搭建
-官方文档  https://hexo.io/zh-cn/
-next官方  http://theme-next.iissnan.com/getting-started.html
-参考文档  https://www.jianshu.com/p/21c94eb7bcd1
+官方文档  https://hexo.io/zh-cn/ <br/>
+next官方  http://theme-next.iissnan.com/getting-started.html <br/>
+参考文档  https://www.jianshu.com/p/21c94eb7bcd1 <br/>
 ## 1.基础环境准备
 git + node + npm <br/>
 <br/>
