@@ -1,7 +1,9 @@
 # hexo搭建
-官方文档  https://hexo.io/zh-cn/ <br/>
-next官方  http://theme-next.iissnan.com/getting-started.html <br/>
-参考文档  https://www.jianshu.com/p/21c94eb7bcd1 <br/>
+hexo官方文档  https://hexo.io/zh-cn/ <br/>
+nexT主题官方文档  http://theme-next.iissnan.com/getting-started.html <br/>
+基础搭建参考文档  https://www.jianshu.com/p/21c94eb7bcd1 <br/>
+live2d（右下角人物） https://github.com/EYHN/hexo-helper-live2d/blob/HEAD/README.zh-CN.md
+
 ## 1.基础环境准备
 git + node + npm <br/>
 <br/>
@@ -34,9 +36,13 @@ language: zh-CN
 重新启动
 hexo server
 
-编辑/themes/next/下的_config.yml文件
-
+可以编辑/themes/next/下的_config.yml文件
 
 
 ## 其他插件
+live2d：
+1.安装live2d的包 npm install --save hexo-helper-live2d
+2.下载动画包  npm install --save live2d-widget-model-haruto
+3.修改根目录下_config.yml加入live2d配置
+
 APlaye.js 音乐播放插件
