@@ -1,6 +1,7 @@
 # hexo搭建
 hexo官方文档  https://hexo.io/zh-cn/ <br/>
 nexT主题官方文档  http://theme-next.iissnan.com/getting-started.html <br/>
+nexT主题个人参考 https://master--janking.netlify.com/post/hexonote.html
 基础搭建参考文档  https://www.jianshu.com/p/21c94eb7bcd1 <br/>
 live2d（右下角人物） https://github.com/EYHN/hexo-helper-live2d/blob/HEAD/README.zh-CN.md
 
@@ -24,9 +25,12 @@ b.上传blog原文件（hexo产生的文件，方便配置样式等迁移）<br/
 <br/>
 
 ## 4.进阶
+hexo new page categories #初始化分类<br/>
+hexo new page tags #初始化标签<br/>
+修改source下对应的index.md
+
 #### 下载模板
 git clone https://github.com/theme-next/hexo-theme-next themes/next
-
 编辑根目录_config.yml文件，
 theme: next
 language: zh-CN
