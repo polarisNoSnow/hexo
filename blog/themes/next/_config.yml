@@ -34,7 +34,7 @@ cache:
 # See: https://theme-next.org/docs/getting-started/
 # ---------------------------------------------------------------
 
-###网站图标
+###网站图标(可采用 https://realfavicongenerator.net/)
 favicon:
   small: /polaris-images/favicon-32x32.png
   medium: /polaris-images/favicon-32x32.png
