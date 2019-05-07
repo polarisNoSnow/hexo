@@ -96,7 +96,7 @@ $ hexo server
 
 
 ## 5.其他插件
-####live2d：
+#### live2d：
 1.安装live2d的包 
 ``` bash
 $ npm install --save hexo-helper-live2d <br/>
@@ -129,4 +129,4 @@ live2d:
     opacity: 1.0 
 ```
 
-####APlaye.js 音乐播放插件（暂无）
+#### APlaye.js 音乐播放插件（暂无）
