@@ -30,19 +30,19 @@ $ hexo init
 $ hexo new post "文章名称" 
 ```
 
-生成静态页面，在public目录里面 
-``` bash
-$ hexo generate 
-```
-
 启动本地服务，可以本地预览  <br/>
 ``` bash
 $ hexo server 
 ```
  
 ## 3.上传到GitHub
-a.上传静态页面  <br/>
-b.上传blog原文件（hexo产生的文件，方便配置样式等迁移）<br/>
+生成静态页面，在public目录里面 
+``` bash
+$ hexo generate 
+```
+a.上传blog原文件（hexo产生的文件，方便配置样式等迁移）<br/>
+b.上传静态页面(public目录下的文件)到yourgithub.github.io项目下，可参考Github Page搭建<br/>
+**每次改动都需要覆盖静态资源，后期查询解决办法**
 
 ## 4.进阶
 初始化分类
