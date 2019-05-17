@@ -8,6 +8,18 @@ categories:
 - 技术
 ---
 
+# 前言
+- 这些笔记都是在16年底弄的（那时候公司很还没有docker，但是国内已经很火了，很多公司都在考虑docker落地，服务上云的事情，公司后来由技术部大佬亲手构建容器平台，本身没有参与到平台搭建中，但后期的代码及部署改造经历过），当时看了下基础记了点笔记，前不久整理下放在博客里面算是纪念。--2019.05.17
+
+  
+
+- 目前主要的部署流程：开发人员将代码提交到gitlab之后，通过Jenkins打包代码 并执行构建脚本，在Rancher管理运行的服务，最后日志由elk收集展示搜索。（jenkins + docker + rancher + elk）
+
+  
+
+- 感受：改造升级之后，基本上都是一键部署，缩短了大量的上线时间，减少了因为手工上线可能带来的误操作问题。同时，伸缩扩容等 可以快速的响应流量的变化。
+
+
 # 环境准备
 系统环境：centos7
 安装
@@ -45,7 +57,7 @@ categories:
 停止镜像
 >$ docker stop ID
 
-# 项目实战(注意各个版本)
+# 搭建镜像
 
 ## 安装基础系统环境
 
@@ -77,13 +89,13 @@ exit退出系统----------退出系统，容器会停止，所以在此之前用
 >$ docker exec -i -t ID  /bin/bash   ###这种方式镜像在后台存活
 
 ## 搭建项目运行环境
-
 JDK8 + tomcat7
 - 现在宿主机器里wget下资源(JDK8+tomcat7的tar包),坑爹的JDK7官网已经不支持游客下载
 - 将宿主磁盘挂载到docker镜像mnt目录下，解压然后cp到自己定义的目录
 - jdk: 修改/etc/profile，添加路径保存，然后source /etc/profile更新
 
 ## 打包镜像
+**建议使用dockerfile构建**
 
 提交修改
 >$ docker commit -m="第一次提交" -a="polaris" 425cef90ab3f polaris/centos:v1
@@ -113,15 +125,12 @@ polaris/centos:v1 :创建的目标镜像名+tag
 - 使用docker bulid来构建（会读取dockerfile文件），更快速简洁
 - 先pull然后修改之后commit（方法一的底层也是通过这种方式）
 
-## 注意
-
+## 其它
 ### 更换镜像库
-
 从国外服务器pull镜像速度较慢，直接使用由DaoCloud或者阿里提供的Registry Mirror服务
 http://blog.daocloud.io/how-to-master-docker-image/
 
 ### 挂载磁盘
-
 将宿主的下载文件夹 挂载 到docker容器polaris镜像中的docker下
 >$ docker run -it -v /home/download:/mnt polaris/centos:v1 /bin/bash
 
@@ -130,12 +139,10 @@ http://blog.daocloud.io/how-to-master-docker-image/
 
 
 ### 查看容器相关信息
-
 主要是查看网络配置，容器里面很多命令都没有
 >$ docker inspect a7e0139b5940
 
 ### 端口映射
-
 交互型
 >$ docker run -i -t -p 5000:8080 polaris/centos:v1 /bin/bash 
 
@@ -143,7 +150,6 @@ http://blog.daocloud.io/how-to-master-docker-image/
 >$ docker run -d -i -t -p 5000:8080 polaris/centos:v1 
 
 ### 阿里云
-
 以我的阿里云为例
 下载
 >$ docker pull registry.cn-hangzhou.aliyuncs.com/polarisnosnow/polaris:v2
@@ -154,7 +160,6 @@ http://blog.daocloud.io/how-to-master-docker-image/
 >$ docker push registry.cn-hangzhou.aliyuncs.com/polarisnosnow/polaris:[镜像版本号]
 
 ### 搭建注册服务器
-
 下载服务器镜像并运行
 >$ docker pull registry 
 >$ docker run -p 5000:5000 -d -i -t registry 
@@ -171,7 +176,6 @@ http://127.0.0.1:5000/v2/my_image/tag/list
 安全访问（默认走的https）
 
 ### docker管理界面
-
 - **dockerUI**
 
 只能用于单机，单功能齐全。
