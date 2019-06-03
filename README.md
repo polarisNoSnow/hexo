@@ -7,10 +7,10 @@
 [markdown语法参考](http://www.markdown.cn/)
 
 ## 1.基础环境准备
-git + node + npm <br/>
+git + node + npm 
 
 ## 2.初步搭建
-新建文件blog 然后进入  <br/>
+新建文件blog 然后进入
 ``` bash
 $ cd blog
 ```
@@ -30,25 +30,44 @@ $ hexo init
 $ hexo new post "文章名称" 
 ```
 
-启动本地服务，可以本地预览  <br/>
+启动本地服务，可以本地预览 
 ``` bash
 $ hexo server 
 ```
- 
+
 ## 3.上传到GitHub
-生成静态页面，在public目录里面 
+
+- 上传blog原文件（hexo产生的文件）到github，方便后期文件、配置等迁移
+
+然后生成静态页面
 ``` bash
 $ hexo generate 
 ```
-a.上传blog原文件（hexo产生的文件，方便配置样式等迁移）<br/>
-b.上传静态页面(public目录下的文件)到yourgithub.github.io项目下，可参考Github Page搭建<br/>
-**每次改动都需要覆盖静态资源，后期查询解决办法**
+
+- 上传静态页面（在public目录下的文件）到yourgithub.github.io项目下，可参考Github Page搭建
+
+**可以在public下面初始化一个git项目，关联yourgithub.github.io，每次提交改动的文件（blog的原文件可以忽略掉此文件夹）**
+
+在hexo目录，提交改动信息并生成静态页面。
+``` bash
+git add . #将工作区的所有改动添加到缓冲区
+git commit -m "提交的信息" #将缓冲区的内容提交到版本库
+git push #推送至远程仓库，此处是我的github
+hexo generate
+```
+
+切换到public目录，提交刚刚生成的静态页面。
+``` bash
+git add .
+git commit -m "提交的信息"
+git push
+```
 
 ## 4.进阶
 初始化分类
 ``` bash
 $ hexo new page categories
-``` 
+```
 
 初始化标签
 ``` bash
