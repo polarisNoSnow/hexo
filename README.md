@@ -4,7 +4,9 @@
 [nexT主题个人参考](https://master--janking.netlify.com/post/hexonote.html) <br/>
 [基础搭建参考文档 ](https://www.jianshu.com/p/21c94eb7bcd1) <br/>
 [live2d（右下角人物）](https://github.com/EYHN/hexo-helper-live2d/blob/HEAD/README.zh-CN.md) <br/>
-[markdown语法参考](http://www.markdown.cn/)
+[markdown官网语法参考](http://www.markdown.cn/)、[Markdown图表语法](https://www.jianshu.com/p/3cf83d22dd3d)
+
+
 
 ## 1.基础环境准备
 git + node + npm 
