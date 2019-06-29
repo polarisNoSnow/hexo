@@ -8,10 +8,10 @@
 
 
 
-## 1.基础环境准备
+## 1. 基础环境准备
 git + node + npm 
 
-## 2.初步搭建
+## 2. 初步搭建
 新建文件blog 然后进入
 ``` bash
 $ cd blog
@@ -37,7 +37,7 @@ $ hexo new post "文章名称"
 $ hexo server 
 ```
 
-## 3.上传到GitHub
+## 3. 上传到GitHub
 
 - 上传blog原文件（hexo产生的文件）到github，方便后期文件、配置等迁移
 
@@ -65,7 +65,8 @@ git commit -m "提交的信息"
 git push
 ```
 
-## 4.进阶
+## 4. 进阶
+### 分类&标签管理
 初始化分类
 ``` bash
 $ hexo new page categories
@@ -92,7 +93,7 @@ type: "tags"
 ---
 ```
 
-#### 更换主题
+### 更换主题
 下载next主题
 ``` bash
 $ git clone https://github.com/theme-next/hexo-theme-next themes/next
@@ -116,9 +117,9 @@ $ hexo server
 
 可以编辑/themes/next/下的_config.yml文件
 
-
-## 5.其他插件
-#### live2d：
+---
+## 5. 第三方插件管理
+### live2d动画
 1.安装live2d的包 
 ``` bash
 $ npm install --save hexo-helper-live2d <br/>
@@ -151,4 +152,17 @@ live2d:
     opacity: 1.0 
 ```
 
-#### APlaye.js 音乐播放插件（暂无）
+### APlaye.js 音乐播放插件（暂无）
+---
+## 6. 其他问题
+### markdown图片问题
+
+存在到md文件中。首先将图片压缩，再转成base64编码，复制到md文件中，如下
+```
+![avatar][picID]
+你的博客内容等
+[picID]:data:image/jpeg;base64.....
+```
+
+pic id可以直接用网图地址或图片的base64编码，此处是将图片内容放到最后，以便编写主要的博客内容（可参考Apollo配置中心篇）。
+
