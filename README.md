@@ -158,11 +158,17 @@ live2d:
 ### markdown图片问题
 
 存在到md文件中。首先将图片压缩，再转成base64编码，复制到md文件中，如下
+
 ```
+1. ![avatar](picPath)
+```
+
+```
+2. 
 ![avatar][picID]
 你的博客内容等
 [picID]:data:image/jpeg;base64.....
 ```
 
-pic id可以直接用网图地址或图片的base64编码，此处是将图片内容放到最后，以便编写主要的博客内容（可参考Apollo配置中心篇）。
+picPath可以直接用网图地址或图片的base64编码，picID此处是将图片内容放到最后，以便编写主要的博客内容（可参考Apollo配置中心篇）。
 
