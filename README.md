@@ -151,6 +151,29 @@ live2d:
   react:
     opacity: 1.0 
 ```
+### gitalk评论
+参考：https://mrluyc.github.io/2019/07/30/HexoNexT%E9%9B%86%E6%88%90Gitalk/ <br/>
+1.github创建一个OAuth Apps获取对应的ID及Secret<br/>
+2.修改根目录下_config.yml加入gitalk配置
+```
+gitalk:
+  # 是否启动gitalk
+  enable: true
+  # 这里填写你的GitHub 的ID，即用户名
+  github_id: polarisnosnow
+  # 你博客的仓库地址
+  repo: polarisnosnow.github.io
+  # 填写之前拷贝的client id
+  client_id: 
+  # 填写之前拷贝的client secret
+  client_secret: 
+  # 这里填写你的GitHub 的ID，即用户名
+  admin_user: polarisnosnow
+  distraction_free_mode: true
+  # 设置为中文，当然你用外文也可以，配置文件里有
+  language: zh-CN    
+```
+
 
 ### APlaye.js 音乐播放插件（暂无）
 ---

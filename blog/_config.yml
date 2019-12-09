@@ -98,4 +98,21 @@ live2d:
     show: true
   react:
     opacity: 1.0 
-    
+
+##评论组件    
+gitalk:
+  # 是否启动gitalk
+  enable: true
+  # 这里填写你的GitHub 的ID，即用户名
+  github_id: polarisnosnow
+  # 你博客的仓库地址
+  repo: polarisnosnow.github.io
+  # 填写之前拷贝的client id
+  client_id: 
+  # 填写之前拷贝的client secret
+  client_secret: 
+  # 这里填写你的GitHub 的ID，即用户名
+  admin_user: polarisnosnow
+  distraction_free_mode: true
+  # 设置为中文，当然你用外文也可以，配置文件里有
+  language: zh-CN    
